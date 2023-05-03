@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+   <style>
+     .first-content{
+        color:red;
+     }
+   </style>
+</head>
+<body>
+   <div class="contianer">
+     <div class="first-content">
+        <h1><span>Car</span> Price Prediction</h1>
+     </div>
+     <div class ="main-section">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h3>Year</h3>
+            <input id="first" name="Year" type="number">
+            <h3>What is The Showroom Price? (in Lakhs)</h3><br><input id="second" name="Present_Price" required="required">
+            <h3>How many Kilometers Drived?</h3><br><input id="third" name="Kms_Driven" required="required">
+            <h3>How many previous owner of the car?</h3><br><input id="fourth" name="Owner" required="required">
+            <h3>What is The Fuel type?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option> 
+                </select>
+            <h3>Are You A dealer or Individual</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h3>Transmission type</h3><br><select name="Transmission_Manual" id="research" required="required">
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+            <br><br><button id="sub" type="submit">Calculate the Selling Price</button>
+            <br>
+        </form>
+     </div>
+   </div>
+</body>
+</html>
